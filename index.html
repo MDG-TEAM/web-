@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isi Nama</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Masukkan Nama Kamu</h1>
+        <input type="text" id="nama" placeholder="Nama kamu...">
+        <button onclick="simpanNama()">Lanjut</button>
+    </div>
+    <script>
+        function simpanNama() {
+            let nama = document.getElementById('nama').value;
+            if (nama.trim() === '') {
+                alert("Nama tidak boleh kosong!");
+                return;
+            }
+            // Simpan nama di localStorage
+            localStorage.setItem('nama', nama);
+            // Setelah nama disimpan, redirect ke name.html
+            window.location.href = 'name.html';
+        }
+        document.addEventListener("contextmenu", function(event) {
+            event.preventDefault();
+            alert("anda tidak boleh klik kanan pada webstie ini!");
+        });
+    </script>
+</body>
+
+</html>
